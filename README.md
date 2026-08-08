@@ -36,13 +36,12 @@ Multi-tenant Document QnA system built production-first across 8 phases.
 
 ## 🧠 What I Actually Know
 
-Most people list frameworks. Here's what I can reason about:
-
-- **Why hybrid retrieval beats pure dense** — dense embeddings lose exact tokens (error codes, IDs, names). BM25 catches them. RRF merges both ranked lists so chunks that score well in both rise to top.
-- **Why pgvector over Pinecone for early-stage SaaS** — one Postgres instance handles structured data + vectors + full-text search. Simpler architecture, lower cost, easier backups.
-- **Why Celery over BackgroundTasks for ingestion** — BackgroundTasks runs in-process, no retries, lost on crash. Celery persists jobs in Redis, retries independently.
-- **Multi-tenant isolation** — authorization filter inside the query (`WHERE tenant_id = ?`), not post-retrieval. Structurally prevents leakage.
-- **BOLA** — the #1 API vulnerability. Every endpoint checks resource ownership, not just authentication.
+- **Async FastAPI** — event loop, dependency injection chains, middleware, Celery vs BackgroundTasks
+- **Production DB layer** — async SQLAlchemy 2.0, Alembic migrations, Redis caching + invalidation, pgvector similarity search
+- **Auth** — JWT access/refresh tokens, OAuth2 flow, multi-tenant isolation enforced at query level
+- **Hybrid RAG** — dense + BM25 merged via RRF, cross-encoder reranking, chunking strategies, corrective RAG with LangGraph
+- **Infrastructure** — Docker multi-stage builds, docker-compose orchestration, CI/CD with GitHub Actions
+- **System Design** — CAP theorem, caching layers, read replicas, RAG SaaS cost management
 
 ---
 
