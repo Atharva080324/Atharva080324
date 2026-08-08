@@ -41,13 +41,21 @@ Streamlit · React
 Production-grade multi-tenant Document QnA system built across 8 phases.
 
 Ingestion pipeline — table-aware PDF parsing, recursive chunking with overlap, pgvector storage
+
 Hybrid retrieval — BM25 sparse + dense vector search merged via Reciprocal Rank Fusion
+
 Reranking — cross-encoder reranking on top-50 candidates before passing to LLM
+
 Corrective RAG — LangGraph state machine with self-correction loop and web search fallback
+
 Auth — JWT access tokens + refresh tokens, tenant isolation (every query filtered by tenant_id)
+
 Streaming — SSE streaming LLM responses to frontend
+
 Eval — RAGAS evaluation endpoints (faithfulness, answer relevancy, hallucination detection)
+
 Stack — FastAPI · PostgreSQL · pgvector · Redis · Celery · Docker · LangGraph
+
 🔹 TrueScan
 
 Agentic AI news generation and information processing pipeline using LLM tool calling and multi-step reasoning.
@@ -61,20 +69,33 @@ LLM-powered data analysis platform. Ask questions about your data in plain Engli
 Most people list frameworks. Here's what I can actually reason about:
 
 Why hybrid retrieval beats pure dense search — dense embeddings lose exact tokens (error codes, names, IDs), BM25 catches them. RRF merges both ranked lists, chunks that perform well in both rise to top.
+
 Why pgvector over Pinecone for early-stage SaaS — eliminates separate vector DB, one Postgres instance handles structured data + vectors + full-text search. Simpler architecture, lower cost, easier backups.
+
 Why Celery over FastAPI BackgroundTasks for document ingestion — BackgroundTasks runs in-process, no retry mechanism, lost on crash. Celery persists jobs in Redis, supports retries, runs independently.
+
 Multi-tenant isolation — authorization filter inside the query (WHERE tenant_id = ?), not post-retrieval filtering. Structurally prevents data leakage, not just "checked after the fact."
+
 BOLA (Broken Object Level Authorization) — the #1 API vulnerability. Every resource endpoint checks ownership, not just authentication.
+
 📚 Currently Building
 Multi-tenant RAG SaaS — 8-phase production build (LangGraph + hybrid retrieval + RAGAS eval + Docker + Railway deployment)
+
 Advanced RAG techniques — Corrective RAG, Self-RAG, proposition chunking, contextual compression
 Open source contributions — exploring FastAPI, LangChain, pgvector ecosystems
+
 🎓 Education & Certifications
+
 B.Tech Computer Science Engineering — CSMSS Chh. Shahu College of Engineering, Aurangabad (2027)
+
 Lateral entry from Government Polytechnic Jalgaon (Diploma in IT)
+
 Google Cloud Certification
+
 Infosys Certification
+
 Deloitte Data Analytics Job Simulation (December 2025)
+
 📫 Connect
 Email: atharvadeshmukh2311@gmail.com
 LinkedIn: Atharva Deshmukh
