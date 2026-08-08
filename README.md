@@ -35,7 +35,9 @@ Python · JavaScript · TypeScript · SQL
 Frontend
 
 Streamlit · React
+
 🚀 Featured Projects
+
 🔹 Document QnA — Production RAG SaaS
 
 Production-grade multi-tenant Document QnA system built across 8 phases.
