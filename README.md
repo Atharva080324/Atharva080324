@@ -7,17 +7,32 @@ Final-year CSE student building production-grade AI systems from the ground up �
 
 ## 🛠️ Stack
 
-**AI/GenAI** — LangChain · LangGraph · RAG · Hybrid Retrieval · Reranking · RAGAS · HuggingFace · Groq · Gemini
+**AI/GenAI** — LangChain · LangGraph · Agentic Workflows · Hybrid Retrieval (Vector + FTS) · Cross-Encoder Reranking · RAGAS · HuggingFace · Groq · Gemini
 
-**Backend** — FastAPI · SQLAlchemy 2.0 (async) · Pydantic v2 · JWT/OAuth2 · Celery · Alembic
+**Backend** — FastAPI (Async) · SQLAlchemy 2.0 · Pydantic v2 · JWT / OAuth 2.0 · Celery · Redis · Alembic
 
 **Databases** — PostgreSQL · pgvector · Redis · ChromaDB · Pinecone · FAISS
 
-**Infra** — Docker · docker-compose · GitHub Actions · Railway · Render
+**Frontend** — React 18 · TypeScript · Vite · TanStack Query · TailwindCSS · Vanilla CSS
+
+**Infra & Cloud** — AWS (EC2) · Oracle Cloud · Docker & Compose · Caddy (TLS/Reverse Proxy) · GitHub Actions · Vercel · Railway
 
 ---
 
-## 🚀 Projects
+## 🚀 Featured Projects
+
+### [RAG-Intel — Production Document Intelligence Platform](https://github.com/Atharva080324/RAG-Intel) · [Live Demo](https://rag-intel.vercel.app) · [API Docs](https://rag-intel.duckdns.org/docs)
+End-to-end multi-format document intelligence platform with hybrid retrieval, agentic self-correction, and streaming responses.
+
+- **Hybrid Retrieval + RRF** — Merges `pgvector` dense cosine similarity with PostgreSQL full-text search (`tsvector`) via Reciprocal Rank Fusion ($k=60$).
+- **Cross-Encoder Reranking** — Re-scores top-32 candidate chunks using `ms-marco-MiniLM-L6-v2` for precision.
+- **Corrective RAG (LangGraph)** — State machine grades retrieval grounding and auto-rewrites queries upon low relevance (bounded retry).
+- **Deterministic Table Analytics** — Markdown table extraction via `pdfplumber` with exact pandas aggregation (`sum`, `avg`, `min`, `max`) — eliminates LLM arithmetic hallucinations.
+- **Streaming & Citations** — Unbuffered Server-Sent Events (SSE) direct to browser with clickable `[S1]` page-level citation inspector.
+- **Full Lifecycle & Auth** — Async Celery background ingestion with live progress polling, document deletion cascades, Google OAuth 2.0, and instant Demo mode.
+- **Stack** — FastAPI · PostgreSQL · pgvector · Redis · Celery · Docker Compose · Caddy · React 18 · TypeScript · Groq
+
+---
 
 ### [Document QnA — Production RAG SaaS](https://github.com/Atharva080324/RAG-Based-Enterprise-Knowledge-assistant)
 Multi-tenant Document QnA system built production-first across 8 phases.
@@ -30,18 +45,22 @@ Multi-tenant Document QnA system built production-first across 8 phases.
 - Eval — RAGAS endpoints (faithfulness, relevancy, hallucination detection)
 - **Stack** — FastAPI · PostgreSQL · pgvector · Redis · Celery · Docker · LangGraph
 
-### [TrueScan](https://github.com/Atharva080324/TrueScan) · [AI Data Analyst](https://github.com/Atharva080324/ai-data-analyst) · [Live Demo](https://ai-data-analyst-self-nu.vercel.app)
+---
+
+### Other Projects
+- **[TrueScan](https://github.com/Atharva080324/TrueScan)** — Document verification and scanning engine.
+- **[AI Data Analyst](https://github.com/Atharva080324/ai-data-analyst)** · [Live Demo](https://ai-data-analyst-self-nu.vercel.app) — Natural language data analysis and chart generation.
 
 ---
 
 ## 🧠 What I Actually Know
 
-- **Async FastAPI** — event loop, dependency injection chains, middleware, Celery vs BackgroundTasks
-- **Production DB layer** — async SQLAlchemy 2.0, Alembic migrations, Redis caching + invalidation, pgvector similarity search
-- **Auth** — JWT access/refresh tokens, OAuth2 flow, multi-tenant isolation enforced at query level
-- **Hybrid RAG** — dense + BM25 merged via RRF, cross-encoder reranking, chunking strategies, corrective RAG with LangGraph
-- **Infrastructure** — Docker multi-stage builds, docker-compose orchestration, CI/CD with GitHub Actions
-- **System Design** — CAP theorem, caching layers, read replicas, RAG SaaS cost management
+- **Async FastAPI** — event loop lifecycle, dependency injection chains, unbuffered streaming responses, Celery vs BackgroundTasks
+- **Production DB Layer** — async SQLAlchemy 2.0, Alembic schema migrations, Redis caching & atomic counters, pgvector HNSW similarity search
+- **Auth & Security** — JWT access/refresh tokens, Google OAuth 2.0 authorization code flow, multi-tenant query-level isolation
+- **Hybrid RAG & Agents** — dense + lexical search merged via RRF, cross-encoder reranking, corrective RAG with LangGraph, deterministic table analytics
+- **Infrastructure & Cloud** — Docker multi-stage builds, Docker Compose orchestration, AWS EC2 deployment, Caddy automated TLS reverse proxy, Vercel frontend CI/CD
+- **System Design** — CAP theorem, cache invalidation strategies, decoupled workers, RAG SaaS token & rate-limit economics
 
 ---
 
