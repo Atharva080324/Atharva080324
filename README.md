@@ -5,24 +5,46 @@ Final-year CSE student building production-grade AI systems from the ground up �
 
 ---
 
-## 🛠️ Stack
+## 🛠️ Tech Stack
 
-**AI/GenAI** — LangChain · LangGraph · Agentic Workflows · Hybrid Retrieval (Vector + FTS) · Cross-Encoder Reranking · RAGAS · HuggingFace · Groq · Gemini
+### AI, LLMs & Agentic Systems
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" />
+  <img src="https://img.shields.io/badge/LangGraph-FF6F00?style=for-the-badge&logo=diagram-project&logoColor=white" alt="LangGraph" />
+  <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face" />
+  <img src="https://img.shields.io/badge/Groq-F55036?style=for-the-badge&logo=fastapi&logoColor=white" alt="Groq" />
+  <img src="https://img.shields.io/badge/Google_Gemini-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini" />
+</p>
 
-**Backend** — FastAPI (Async) · SQLAlchemy 2.0 · Pydantic v2 · JWT / OAuth 2.0 · Celery · Redis · Alembic
+### Backend, Databases & Caching
+<p align="left">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white" alt="Celery" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/pgvector-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgvector" />
+  <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB" />
+  <img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy" />
+</p>
 
-**Databases** — PostgreSQL · pgvector · Redis · ChromaDB · Pinecone · FAISS
-
-**Frontend** — React 18 · TypeScript · Vite · TanStack Query · TailwindCSS · Vanilla CSS
-
-**Infra & Cloud** — AWS (EC2) · Oracle Cloud · Docker & Compose · Caddy (TLS/Reverse Proxy) · GitHub Actions · Vercel · Railway
+### Frontend, Cloud & DevOps
+<p align="left">
+  <img src="https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 18" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Caddy-22B573?style=for-the-badge&logo=caddy&logoColor=white" alt="Caddy" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+</p>
 
 ---
 
 ## 🚀 Featured Projects
 
-### [RAG-Intel — Production Document Intelligence Platform](https://github.com/Atharva080324/RAG-Intel) · [Live Demo](https://rag-intel.vercel.app) · [API Docs](https://rag-intel.duckdns.org/docs)
-End-to-end multi-format document intelligence platform with hybrid retrieval, agentic self-correction, and streaming responses.
+### 1. [RAG-Intel — Production Document Intelligence Platform](https://github.com/Atharva080324/RAG-Intel) · [Live Demo](https://rag-intel.vercel.app) · [API Docs](https://rag-intel.duckdns.org/docs)
+End-to-end multi-format document intelligence platform with hybrid retrieval, agentic self-correction, and unbuffered streaming responses.
 
 - **Hybrid Retrieval + RRF** — Merges `pgvector` dense cosine similarity with PostgreSQL full-text search (`tsvector`) via Reciprocal Rank Fusion ($k=60$).
 - **Cross-Encoder Reranking** — Re-scores top-32 candidate chunks using `ms-marco-MiniLM-L6-v2` for precision.
@@ -34,22 +56,26 @@ End-to-end multi-format document intelligence platform with hybrid retrieval, ag
 
 ---
 
-### [Document QnA — Production RAG SaaS](https://github.com/Atharva080324/RAG-Based-Enterprise-Knowledge-assistant)
-Multi-tenant Document QnA system built production-first across 8 phases.
+### 2. [AI Data Analyst — Agentic Natural Language Analytics Engine](https://github.com/Atharva080324/ai-data-analyst) · [Live Demo](https://ai-data-analyst-self-nu.vercel.app)
+Production-grade conversational data analysis platform converting natural language into executable SQL, analytical insights, and interactive charts over CSV and multi-sheet Excel files.
 
-- Hybrid retrieval — BM25 + dense vector search merged via Reciprocal Rank Fusion
-- Reranking — cross-encoder on top-50 candidates before LLM
-- Corrective RAG — LangGraph state machine with self-correction + web search fallback
-- Auth — JWT + refresh tokens, tenant isolation enforced at query level
-- Streaming — SSE streaming LLM responses
-- Eval — RAGAS endpoints (faithfulness, relevancy, hallucination detection)
-- **Stack** — FastAPI · PostgreSQL · pgvector · Redis · Celery · Docker · LangGraph
+- **Multi-Step Agentic Graph** — ~20-node LangGraph pipeline with dynamic query routing, schema selection, and memory retrieval.
+- **DuckDB Analytical Engine** — In-memory OLAP query execution providing sub-second aggregations over large structured datasets.
+- **Self-Healing SQL Generator** — `sqlglot` syntactic validation with automated error recovery and self-correcting query retry loops (up to 3 retries).
+- **Business Intelligence Generation** — Translates raw query results into executive takeaways, actionable recommendations, and dynamic data visualizations.
+- **Session-Isolated State** — Strict tenant and session boundary isolation preventing cross-user query and dataset leakage.
+- **Stack** — FastAPI · LangGraph · DuckDB · PostgreSQL · SQLAlchemy · Groq (LLaMA 3.1) · Pandas · sqlglot
 
 ---
 
-### Other Projects
-- **[TrueScan](https://github.com/Atharva080324/TrueScan)** — Document verification and scanning engine.
-- **[AI Data Analyst](https://github.com/Atharva080324/ai-data-analyst)** · [Live Demo](https://ai-data-analyst-self-nu.vercel.app) — Natural language data analysis and chart generation.
+### 3. [TrueScan — Autonomous AI News Journalist & Audio Synthesizer](https://github.com/Atharva080324/TrueScan)
+AI-powered real-time news aggregation, verification, summarization, and audio generation system designed to combat information overload and support accessibility.
+
+- **Live Multi-Source Scraping** — Autonomous retrieval pipeline fetching breaking global news and Reddit discussions using Bright Data MCP.
+- **Agentic Workflow Control** — LangChain + LangGraph decision state machine orchestrating content verification, deduplication, and context-aware synthesis.
+- **Executive Summarization** — Uses Google Gemini Flash to generate structured, fact-grounded briefings from multi-source articles.
+- **Natural Voice Generation** — Integrates ElevenLabs Voice API to transform synthesized briefings into natural, lifelike audio podcasts for hands-free listening.
+- **Stack** — FastAPI · Streamlit · LangGraph · LangChain · Google Gemini · ElevenLabs TTS · Bright Data MCP
 
 ---
 
