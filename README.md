@@ -91,4 +91,4 @@ AI-powered real-time news aggregation, verification, summarization, and audio ge
 ---
 
 ## 📫 Connect
-[atharvadeshmukh2311@gmail.com](mailto:atharvadeshmukh2311@gmail.com) · [LinkedIn](https://www.linkedin.com/in/atharva-deshmukh-151589248/)
+[atharvadeshmukh2311@gmail.com](mailto:deshmukhatharva1123@gmail.com) · [LinkedIn](https://www.linkedin.com/in/atharva-deshmukh-151589248/)
